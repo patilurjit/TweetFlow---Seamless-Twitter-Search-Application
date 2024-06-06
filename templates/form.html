@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Twitter Searcher</title>
+      <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+      <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+   </head>
+   <body>
+      <!-- Sidebar -->
+      <div class="sidebar">
+         <h3> Choose what you want to search</h3>
+         <form method="post" action = "/search">
+            <label class="rad-label">
+               <input type="radio" class="rad-input" name="options" id="option1" value="hashtag">
+               <div class="rad-design"></div>
+               <div class="rad-text">Hashtag</div>
+            </label>
+            <label class="rad-label">
+               <input type="radio" class="rad-input" name="options" id="option2" value="keyword">
+               <div class="rad-design"></div>
+               <div class="rad-text">Keyword</div>
+            </label>
+            <label class="rad-label">
+               <input type="radio" class="rad-input" name="options" id="option3" value="username">      
+               <div class="rad-design"></div>
+               <div class="rad-text">Username</div>
+            </label>
+            <h3 >Search Query: </h3>
+            <input class= 'input' name="query"/>
+            <button class= "button-15" type="submit">Submit</button>
+            <br/><br/>
+            <h3> Top 10 Queries </h3>
+            <input class="button-15" type="button" name="top_tweets" value="Top 10 Tweets" onclick="window.location.href='/top_10_tweets'"></input>
+            <input class="button-15" type="button" name="top_users" value="Top 10 Users" onclick="window.location.href='/top_10_users'"></input>  
+         </form>
+      </div>
+      <!-- Main content -->
+      <div class="main">
+         <h5>Tweet Search Application</h5>
+      </div>
+   </body>
+</html>
